@@ -1,0 +1,88 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.5",
+  "id": "bf70e9a0-6936-11ea-9d2a-cd77512f1e8e",
+  "version": "0.0.1",
+  "packageName": "faqp",
+  "developer": {
+    "name": "SUSD",
+    "websiteUrl": "https://{{HOSTNAME}}",
+    "privacyUrl": "https://{{HOSTNAME}}/privacy.html",
+    "termsOfUseUrl": "https://{{HOSTNAME}}/tou.html"
+  },
+  "name": {
+    "short": "SUSDHelpDeskFAQP",
+    "full": "SUSDHelpDeskFAQP"
+  },
+  "description": {
+    "short": "TODO: add short description here",
+    "full": "TODO: add full description here"
+  },
+  "icons": {
+    "outline": "icon-outline.png",
+    "color": "icon-color.png"
+  },
+  "accentColor": "#D85028",
+  "configurableTabs": [],
+  "staticTabs": [
+    {
+      "entityId": "default-data",
+      "name": "FAQPlus",
+      "contentUrl": "https://{{HOSTNAME}}/faqPlusTab/",
+      "scopes": [
+        "personal"
+      ]
+    },
+    {
+      "entityId": "2fb6ac40-6937-11ea-b3b9-01fe9f41b5c6",
+      "name": "FAQPlus",
+      "contentUrl": "https://{{HOSTNAME}}/susdHelpDeskFaqpBot/faqPlus.html",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "bots": [
+    {
+      "botId": "{{MICROSOFT_APP_ID}}",
+      "needsChannelSelector": true,
+      "isNotificationOnly": false,
+      "scopes": [
+        "team",
+        "personal"
+      ],
+      "commandLists": [
+        {
+          "scopes": [
+            "team",
+            "personal"
+          ],
+          "commands": [
+            {
+              "title": "Help",
+              "description": "Shows help information"
+            }
+          ]
+        }
+      ],
+      "supportsFiles": true
+    }
+  ],
+  "connectors": [
+    {
+      "connectorId": "{{CONNECTOR_ID}}",
+      "configurationUrl": "https://{{HOSTNAME}}/susdHelpDeskFaqpConnector/config.html",
+      "scopes": [
+        "team"
+      ]
+    }
+  ],
+  "composeExtensions": [],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "{{HOSTNAME}}"
+  ]
+}
